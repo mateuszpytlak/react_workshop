@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import './App.css'
+import './App.css';
+import { Button } from './ui/Button/Button';
+import { Text } from './ui/Text/Text';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Text>Test text</Text>
+      <Button label="Hello world!" onClick={ () => alert('haj') } disabled={true} />
     </>
   )
 }
