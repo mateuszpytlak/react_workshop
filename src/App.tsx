@@ -1,15 +1,15 @@
 import './App.css';
-import { Button } from './ui/Button/Button';
-import { Text } from './ui/Text/Text';
+import {Generator} from "./components/Generator";
+import {Counter} from "./components/Counter";
 
 function App() {
 
-  return (
-    <>
-      <Text>Test text</Text>
-      <Button label="Hello world!" onClick={ () => alert('haj') } disabled={true} />
-    </>
-  )
+    return (
+        <>
+            <Generator />
+            <Counter />
+        </>
+    )
 }
 
 export default App
