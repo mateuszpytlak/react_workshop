@@ -6,8 +6,8 @@ function App() {
 
     return (
         <>
-            <Generator />
-            <Counter />
+            {/*<Generator />*/}
+            {/*<Counter />*/}
         </>
     )
 }
