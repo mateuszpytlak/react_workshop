@@ -1,13 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 import {Text} from "../../ui/Text/Text.tsx";
 import {Button} from "../../ui/Button/Button.tsx";
-import {useState} from "react";
+import {type MouseEventHandler, useState} from "react";
 
 export const Generator = () => {
 
     const [id, setId] = useState(uuidv4());
 
-    const handleClick = () => {
+    const handleClick: MouseEventHandler<HTMLButtonElement> = () => {
         setId(uuidv4());
     }
 
