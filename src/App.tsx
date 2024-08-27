@@ -1,7 +1,7 @@
 import './App.css';
 // import {Generator} from "./components/Generator";
 // import {Counter} from "./components/Counter";
-import {RegistrationFormState} from "./components/RegistrationForm/RegistrationFormState.tsx";
+import {RegistrationFormRefs, RegistrationFormState} from "./components/RegistrationForm";
 
 function App() {
 
@@ -9,7 +9,8 @@ function App() {
         <>
             {/*<Generator />*/}
             {/*<Counter />*/}
-            <RegistrationFormState></RegistrationFormState>
+            <RegistrationFormState />
+            <RegistrationFormRefs />
         </>
     )
 }
