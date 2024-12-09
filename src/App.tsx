@@ -9,7 +9,7 @@ function App() {
         <>
             {/*<Generator />*/}
             {/*<Counter />*/}
-            <RegistrationFormState />
+            {/*<RegistrationFormState />*/}
             <RegistrationFormRefs />
         </>
     )
