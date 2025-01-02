@@ -1,5 +1,6 @@
 import './App.css';
-import {RegistrationFormRefsHookFormWithValidation} from "./components/RegistrationForm";
+// import {RegistrationFormRefsHookFormWithValidation} from "./components/RegistrationForm";
+import {ComponentGenerator} from "./components/ComponentGenerator";
 
 function App() {
 
@@ -10,7 +11,11 @@ function App() {
             {/*<RegistrationFormState />*/}
             {/*<RegistrationFormRefs />*/}
             {/*<RegistrationFormRefsHookForm />*/}
-            <RegistrationFormRefsHookFormWithValidation/>
+            {/*<RegistrationFormRefsHookFormWithValidation/>*/}
+            {/*<hr/>*/}
+
+            <ComponentGenerator />
+
         </>
     )
 }
