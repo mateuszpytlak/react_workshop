@@ -10,8 +10,6 @@ import {type RegistrationFormData, validationSchema} from "./types.ts";
 //     language: string;
 // }
 
-
-
 export const RegistrationFormRefsHookFormWithValidation = () => {
     const {
         register,
