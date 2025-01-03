@@ -1,4 +1,4 @@
-import {Select} from "../../ui";
+import {Input, Select} from "../../ui";
 import {FormEventHandler, useRef, useState} from "react";
 
 type HTMLElementType = '' | 'button' | 'text' | 'header';
@@ -13,13 +13,20 @@ const htmlElements = {
 export const ComponentGenerator = () => {
 
     const selectElementRef = useRef<HTMLSelectElement>(null);
-    const [selectedHTMLElement, setSelectedHTMLElement] = useState<HTMLElementType>('')
+    const textInputRef = useRef<HTMLInputElement>(null);
+    const [selectedHTMLElement, setSelectedHTMLElement] = useState<HTMLElementType>('');
+    const [textProps, setTextProps] = useState<string>('');
 
-    const handleChange: FormEventHandler = (event) => {
+    const handleSelectChange: FormEventHandler = (event) => {
         event.preventDefault();
         const value = selectElementRef.current?.value as HTMLElementType;
 
         setSelectedHTMLElement(value);
+    }
+
+    const handleInputChange: FormEventHandler = () => {
+        const textValue = textInputRef.current?.value || '';
+        setTextProps(textValue);
     }
 
     const handleCopy: FormEventHandler = async (event) => {
@@ -30,22 +37,25 @@ export const ComponentGenerator = () => {
         } catch (error) {
             console.log('Copy error', error);
         }
-
     }
 
     return (
         <>
-            <Select ref={selectElementRef} name='htmlElements' onChange={handleChange}/>
+            <Select ref={selectElementRef} name='htmlElements' onChange={handleSelectChange}/>
             <div className="my-3">output</div>
             <div>
-                {selectedHTMLElement === 'text' && <code>{htmlElements.text}</code>}
+                {selectedHTMLElement === '' && <p>Please select an option above.</p>}
+                {selectedHTMLElement === 'text' && <code>&lt;p&gt;{textProps}&lt;/p&gt;</code>}
                 {selectedHTMLElement === 'header' && <code>{htmlElements.header}</code>}
                 {selectedHTMLElement === 'button' && <code>{htmlElements.button}</code>}
-                {selectedHTMLElement === '' && <p>Please select an option above.</p>}
+
+                {selectedHTMLElement === 'text' && (
+                    <div>
+                        <Input label='input props' ref={textInputRef} onChange={handleInputChange}/>
+                    </div>
+                )}
             </div>
-
             <button onClick={handleCopy}>Kopiuj tekst</button>
-
         </>
     )
 }
