@@ -3,7 +3,7 @@ import {ComponentPropsWithRef, forwardRef, Ref} from "react";
 type Props = {
     name: string
 } & ComponentPropsWithRef<'select'>;
-export const Select = forwardRef( ({name, ...rest}: Props,ref: Ref<HTMLSelectElement>) => {
+export const Select = forwardRef( ({name, ...rest}: Props, ref: Ref<HTMLSelectElement>) => {
 
     return (
         <div className="my-4">

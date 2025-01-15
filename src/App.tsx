@@ -2,22 +2,25 @@ import './App.css';
 // import {RegistrationFormRefsHookFormWithValidation} from "./components/RegistrationForm";
 // import {ComponentGenerator} from "./components/ComponentGenerator";
 import { FormWizard } from './components/FormWizard/FormWizard';
+// import {ComponentGenerator} from "./components/ComponentGenerator";
+// import {RegistrationFormRefsHookFormWithValidation} from "./components/RegistrationForm";
 
 function App() {
 
     return (
         <>
-            {/*<Generator />*/}
-            {/*<Counter />*/}
-            {/*<RegistrationFormState />*/}
-            {/*<RegistrationFormRefs />*/}
-            {/*<RegistrationFormRefsHookForm />*/}
-            {/*<RegistrationFormRefsHookFormWithValidation/>*/}
-            {/*<hr/>*/}
+            <div className="">
+                {/*<Generator />*/}
+                {/*<Counter />*/}
+                {/*<RegistrationFormState />*/}
+                {/*<RegistrationFormRefs />*/}
+                {/*<RegistrationFormRefsHookForm />*/}
+                {/*<RegistrationFormRefsHookFormWithValidation />*/}
+                {/*<hr/>*/}
 
-            {/* <ComponentGenerator /> */}
-            <FormWizard />
-
+                {/*<ComponentGenerator />*/}
+                <FormWizard />
+            </div>
         </>
     )
 }
