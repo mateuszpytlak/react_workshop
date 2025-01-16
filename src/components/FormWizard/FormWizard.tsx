@@ -8,32 +8,28 @@ type FormData = {
     hobby: string;
 };
 
-const StepOne = ({formData, onChange,}: { formData: Partial<FormData>; onChange: (field: keyof FormData, value: string) => void; }) => (
+const StepOne = ({ onChange,}: { onChange: (field: keyof FormData, value: string) => void; }) => (
     <>
         <Input
             label="Name"
-            value={formData.name || ""}
             onChange={(e) => onChange("name", e.target.value)}
         />
         <Input
             label="Surname"
-            value={formData.surname || ""}
             onChange={(e) => onChange("surname", e.target.value)}
         />
     </>
 );
 
-const StepTwo = ({formData, onChange,}: { formData: Partial<FormData>; onChange: (field: keyof FormData, value: string) => void; }) => (
+const StepTwo = ({onChange,}: { onChange: (field: keyof FormData, value: string) => void; }) => (
     <>
         <Input
             label="Date of Birth"
             type="date"
-            value={formData.dateBirth || ""}
             onChange={(e) => onChange("dateBirth", e.target.value)}
         />
         <Input
             label="Hobby"
-            value={formData.hobby || ""}
             onChange={(e) => onChange("hobby", e.target.value)}
         />
     </>
@@ -70,9 +66,9 @@ export const FormWizard = () => {
     const renderStep = () => {
         switch (currStep) {
             case 0:
-                return <StepOne formData={formData} onChange={handleInputChange} />;
+                return <StepOne onChange={handleInputChange} />;
             case 1:
-                return <StepTwo formData={formData} onChange={handleInputChange} />;
+                return <StepTwo onChange={handleInputChange} />;
             default:
                 return null;
         }
