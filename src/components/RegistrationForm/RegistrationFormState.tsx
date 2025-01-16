@@ -1,4 +1,4 @@
-import {Button} from "../../ui/Button/Button.tsx";
+import {Button} from "../../ui";
 import {type ChangeEventHandler, FormEventHandler, useState} from "react";
 
 type RegistrationFormData = {
