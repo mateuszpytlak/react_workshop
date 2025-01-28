@@ -1,42 +1,61 @@
-import { useState } from "react";
-import { Button, Input } from "../../ui";
+import {useState} from "react";
+import {Button, Input} from "../../ui";
 
-type FormData = {
+type FormDataType = {
     name: string;
     surname: string;
     dateBirth: string;
     hobby: string;
 };
 
-const StepOne = ({ onChange,}: { onChange: (field: keyof FormData, value: string) => void; }) => (
-    <>
-        <Input
-            label="Name"
-            onChange={(e) => onChange("name", e.target.value)}
-        />
-        <Input
-            label="Surname"
-            onChange={(e) => onChange("surname", e.target.value)}
-        />
-    </>
-);
+const StepOne = ({onChange}: { onChange: (field: keyof FormDataType, value: string) => void; }) => {
+    return (
+        <>
+            <h2>Step One</h2>
+            <Input
+                label="Name"
+                onChange={(e) => onChange("name", e.target.value)}
+            />
+            <Input
+                label="Surname"
+                onChange={(e) => onChange("surname", e.target.value)}
+            />
+        </>
+    )
+};
 
-const StepTwo = ({onChange,}: { onChange: (field: keyof FormData, value: string) => void; }) => (
-    <>
-        <Input
-            label="Date of Birth"
-            type="date"
-            onChange={(e) => onChange("dateBirth", e.target.value)}
-        />
-        <Input
-            label="Hobby"
-            onChange={(e) => onChange("hobby", e.target.value)}
-        />
-    </>
-);
+const StepTwo = ({onChange}: { onChange: (field: keyof FormDataType, value: string) => void; }) => {
+    return (
+        <>
+            <h2>Step Two</h2>
+            <Input
+                label="Date of Birth"
+                type="date"
+                onChange={(e) => onChange("dateBirth", e.target.value)}
+            />
+            <Input
+                label="Hobby"
+                onChange={(e) => onChange("hobby", e.target.value)}
+            />
+        </>
+    )
+};
+
+const StepThree = ( {formData}: { formData: FormDataType} ) => {
+    return (
+        <>
+            <h2>Step Three</h2>
+            <div>Summary:</div>
+            <div>{`Name: ${formData.name}`}</div>
+            <div>{`Surname: ${formData.surname}`}</div>
+            <div>{`Date of Birth: ${formData.dateBirth}`}</div>
+            <div>{`Hobby: ${formData.hobby}`}</div>
+        </>
+    )
+}
 
 export const FormWizard = () => {
-    const [formData, setFormData] = useState<FormData>({
+    const [formData, setFormData] = useState<FormDataType>({
         name: "",
         surname: "",
         dateBirth: "",
@@ -44,7 +63,7 @@ export const FormWizard = () => {
     });
     const [currStep, setCurrStep] = useState<number>(0);
 
-    const handleInputChange = (field: keyof FormData, value: string) => {
+    const handleInputChange = (field: keyof FormDataType, value: string) => {
         setFormData((prev) => ({
             ...prev,
             [field]: value,
@@ -52,7 +71,7 @@ export const FormWizard = () => {
     };
 
     const handleNextClick = () => {
-        if (currStep < 1) {
+        if (currStep < 2) {
             setCurrStep((prevStep) => prevStep + 1);
         }
     };
@@ -66,9 +85,11 @@ export const FormWizard = () => {
     const renderStep = () => {
         switch (currStep) {
             case 0:
-                return <StepOne onChange={handleInputChange} />;
+                return <StepOne onChange={handleInputChange}/>;
             case 1:
-                return <StepTwo onChange={handleInputChange} />;
+                return <StepTwo onChange={handleInputChange}/>;
+            case 2:
+                return <StepThree formData={formData} />
             default:
                 return null;
         }
@@ -79,16 +100,9 @@ export const FormWizard = () => {
             <div className="">
                 <h1>Form Wizard</h1>
                 {renderStep()}
-                <Button label="Previous" onClick={handlePrevClick} />
-                <Button label="Next" onClick={handleNextClick} />
+                <Button label="Previous" onClick={handlePrevClick}/>
+                <Button label="Next" onClick={handleNextClick}/>
             </div>
-            <div>
-                <strong>Form Data:</strong>
-            </div>
-            <div>{`Name: ${formData.name}`}</div>
-            <div>{`Surname: ${formData.surname}`}</div>
-            <div>{`Date of Birth: ${formData.dateBirth}`}</div>
-            <div>{`Hobby: ${formData.hobby}`}</div>
         </>
     );
 };
