@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
+
 type Props = {
-    children: string;
+    children: ReactNode;
 }
 
 export function Text( { children }: Props) {
     return (
-        <p>{ children }</p>
+        <p className="dark:text-slate-300">{ children }</p>
     )
 }
