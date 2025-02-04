@@ -34,9 +34,7 @@ const addDarkClass = () => document.body.classList.add('dark');
 
 
 const useTheme = () => {
-    //const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
-    console.log(getMode());
-    
+    //const [theme, setTheme] = useState<Theme>(Theme.LIGHT);  
     const theme = useRef<Theme | null>(getMode());
 
     // const toggle = () => {        
