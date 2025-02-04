@@ -5,6 +5,7 @@ import { AuthContextProvider } from './components/Auth/AuthContext.tsx';
 // import { FormWizard } from './components/FormWizard/FormWizard';
 // import {ViewPort} from "./components/ViewPort";
 import { AuthInfo } from "./components/Auth/AuthInfo.tsx";
+import { Stepper } from './components/Stepper';
 import { ThemeContextProvider } from './components/Theme/ThemeContext.tsx';
 import { ThemeSwitcher } from './components/Theme/ThemeSwitcher.tsx';
 // import {ComponentGenerator} from "./components/ComponentGenerator";
@@ -28,9 +29,10 @@ function App() {
                 {/*<ViewPort />*/}
 
                 <ThemeContextProvider>
-                    <ThemeSwitcher/>
+                    {/* <ThemeSwitcher/> */}
                     <AuthContextProvider>
-                        <AuthInfo />
+                        {/* <AuthInfo /> */}
+                        <Stepper/>
                     </AuthContextProvider>
                 </ThemeContextProvider>
             </div>
