@@ -1,13 +1,13 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import { AuthContextProvider } from './components/Auth/AuthContext.tsx';
 // import {RegistrationFormRefsHookFormWithValidation} from "./components/RegistrationForm";
 // import {ComponentGenerator} from "./components/ComponentGenerator";
 // import { FormWizard } from './components/FormWizard/FormWizard';
 // import {ViewPort} from "./components/ViewPort";
-import { AuthInfo } from "./components/Auth/AuthInfo.tsx";
-import { Stepper } from './components/Stepper';
+//import { AuthInfo } from "./components/Auth/AuthInfo.tsx";
 import { ThemeContextProvider } from './components/Theme/ThemeContext.tsx';
-import { ThemeSwitcher } from './components/Theme/ThemeSwitcher.tsx';
+import { router } from './routes.tsx';
 // import {ComponentGenerator} from "./components/ComponentGenerator";
 // import {RegistrationFormRefsHookFormWithValidation} from "./components/RegistrationForm";
 
@@ -31,8 +31,8 @@ function App() {
                 <ThemeContextProvider>
                     {/* <ThemeSwitcher/> */}
                     <AuthContextProvider>
+                        <RouterProvider router={router} />
                         {/* <AuthInfo /> */}
-                        <Stepper/>
                     </AuthContextProvider>
                 </ThemeContextProvider>
             </div>

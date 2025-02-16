@@ -5,16 +5,17 @@ type State = {
     count: number;
 }
 
+type Action = {
+    type: ActionType,
+    payload?: number,
+}
+
 enum ActionType {
     INCREMENT = 'increment',
     DECREMENT = 'decrement',
     SET_VALUE = 'set_value',
 }
 
-type Action = {
-    type: ActionType,
-    payload?: number,
-}
 
 const initialState: State = { count: 0 };
 
@@ -46,7 +47,7 @@ export const Stepper = () => {
 
     const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
         console.log(event.code);
-        if (event.code === 'Enter' || event.code === 'NumpadEnter'  && inputValueRef.current) {
+        if ((event.code === 'Enter' || event.code === 'NumpadEnter')  && inputValueRef.current) {
             dispatch(setValue(parseInt(inputValueRef.current.value, 10)))
         }
     }

@@ -19,6 +19,6 @@ export const Counter = () => {
     }, []);
 
     return (
-        <div>{count}</div>
+        <div className="dark:text-slate-300">{count}</div>
     )
 }
