@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { routes } from "../../routes";
+import { Basket } from "../../features/Products/basket";
 
 type Props = {
     to: string;
-    children: string;
+    children: React.ReactNode;
 }
 
 const CustomLink = ({ to, children }: Props) => {
@@ -37,6 +38,12 @@ export const Menu = () => {
                     </li>
                     <li className="mr-2">
                         <CustomLink to={routes.STEPPER.path}>Stepper</CustomLink>
+                    </li>
+                    <li className="mr-2">
+                        <CustomLink to={routes.PRODUCTS.path}>Products</CustomLink>
+                    </li>
+                    <li className="mr-2">
+                        <CustomLink to={routes.BASKETLIST.path}><Basket /></CustomLink>
                     </li>
                 </ul>
             </nav>
