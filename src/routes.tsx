@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom"
 import { Layout } from "./components/Layout/Layout";
 import { HomePage } from "./pages/HomePage";
-import { CounterPage } from "./pages/CounterPage copy";
+import { CounterPage } from "./pages/CounterPage";
 import { GeneratorPage } from "./pages/GeneratorPage";
 import { RegistrationPage } from "./pages/RegistrationPage";
 import { StepperPage } from "./pages/StepperPage";
+import { ProductsPage } from "./pages/ProductsPage";
+import { BasketListPage } from "./pages/BasketListPage";
 
 export const routes = {
     HOME: {
@@ -25,6 +27,14 @@ export const routes = {
     },
     STEPPER: {
         path: '/stepper',
+        //title: 
+    },
+    PRODUCTS: {
+        path: '/products',
+        //title: 
+    },
+    BASKETLIST: {
+        path: '/basket_list',
         //title: 
     }
 }
@@ -51,5 +61,13 @@ export const router = createBrowserRouter([{
     {
         path: routes.STEPPER.path,
         element: <StepperPage />
+    },
+    {
+        path: routes.PRODUCTS.path,
+        element: <ProductsPage />
+    },
+    {
+        path: routes.BASKETLIST.path,
+        element: <BasketListPage />
     }]
 }]);

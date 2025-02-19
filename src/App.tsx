@@ -9,8 +9,13 @@ import { AuthInfo } from './components/Auth/AuthInfo.tsx';
 import { ThemeContextProvider } from './components/Theme/ThemeContext.tsx';
 import { router } from './routes.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary.tsx';
+import { ThemeSwitcher } from './components/Theme/ThemeSwitcher.tsx';
+import { Provider as ReduxAppProvider } from 'react-redux';
 // import {ComponentGenerator} from "./components/ComponentGenerator";
 // import {RegistrationFormRefsHookFormWithValidation} from "./components/RegistrationForm";
+
+import { store } from './store';
+import { FormWizard } from './components/FormWizard/FormWizard.tsx';
 
 function App() {
     return (
@@ -24,20 +29,25 @@ function App() {
             {/*<hr/>*/}
 
             {/*<ComponentGenerator />*/}
-            {/*<FormWizard />*/}
+            <FormWizard />
 
             {/*<ViewPort />*/}
 
             <ErrorBoundary fallback={<p className="dark:text-slate-300">General error</p>}>
-                <ThemeContextProvider>
-                    {/* <ThemeSwitcher/> */}
-                    <AuthContextProvider>
-                        <RouterProvider router={router} />
-                    </AuthContextProvider>
-                    <ErrorBoundary>
-                        <AuthInfo />
-                    </ErrorBoundary>
-                </ThemeContextProvider>
+                <ReduxAppProvider store={store}>
+                    <ThemeContextProvider>
+                        <ThemeSwitcher />
+                        <AuthContextProvider>
+                            <RouterProvider router={router} />
+                            <br />
+                            <hr />
+                            <br />
+                            <ErrorBoundary>
+                                <AuthInfo />
+                            </ErrorBoundary>
+                        </AuthContextProvider>
+                    </ThemeContextProvider>
+                </ReduxAppProvider>
             </ErrorBoundary>
         </>
     )
