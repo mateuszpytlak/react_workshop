@@ -8,7 +8,7 @@ import { AuthContextProvider } from './components/Auth/AuthContext.tsx';
 import { AuthInfo } from './components/Auth/AuthInfo.tsx';
 import { ThemeContextProvider } from './components/Theme/ThemeContext.tsx';
 import { router } from './routes.tsx';
-import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary.tsx';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { ThemeSwitcher } from './components/Theme/ThemeSwitcher.tsx';
 import { Provider as ReduxAppProvider } from 'react-redux';
 // import {ComponentGenerator} from "./components/ComponentGenerator";
@@ -16,6 +16,8 @@ import { Provider as ReduxAppProvider } from 'react-redux';
 
 import { store } from './store';
 import { FormWizard } from './components/FormWizard/FormWizard.tsx';
+import { UsersList } from './components/UsersList/UsersList.tsx';
+import { users } from './utils/mockData.ts';
 
 function App() {
     return (
@@ -45,6 +47,10 @@ function App() {
                             <ErrorBoundary>
                                 <AuthInfo />
                             </ErrorBoundary>
+                            <br />
+                            <hr />
+                            <br />
+                            <UsersList data={users}/>
                         </AuthContextProvider>
                     </ThemeContextProvider>
                 </ReduxAppProvider>
