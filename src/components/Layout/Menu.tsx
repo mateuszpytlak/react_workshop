@@ -40,6 +40,9 @@ export const Menu = () => {
                         <CustomLink to={routes.STEPPER.path}>Stepper</CustomLink>
                     </li>
                     <li className="mr-2">
+                        <CustomLink to={routes.BRAND_SWITCHER.path}>Brand Switcher</CustomLink>
+                    </li>
+                    <li className="mr-2">
                         <CustomLink to={routes.PRODUCTS.path}>Products</CustomLink>
                     </li>
                     <li className="mr-2">

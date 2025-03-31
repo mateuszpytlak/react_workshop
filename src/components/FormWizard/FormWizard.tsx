@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Button, Input} from "../../ui";
+import {Button, Input, Text} from "../../ui";
 
 type FormDataType = {
     name: string;
@@ -11,7 +11,7 @@ type FormDataType = {
 const StepOne = ({onChange}: { onChange: (field: keyof FormDataType, value: string) => void; }) => {
     return (
         <>
-            <h2>Step One</h2>
+            <h2 className="dark: text-slate-300">Step One</h2>
             <Input
                 label="Name"
                 onChange={(e) => onChange("name", e.target.value)}
@@ -27,7 +27,7 @@ const StepOne = ({onChange}: { onChange: (field: keyof FormDataType, value: stri
 const StepTwo = ({onChange}: { onChange: (field: keyof FormDataType, value: string) => void; }) => {
     return (
         <>
-            <h2>Step Two</h2>
+            <h2 className="dark: text-slate-300">Step Two</h2>
             <Input
                 label="Date of Birth"
                 type="date"
@@ -44,12 +44,12 @@ const StepTwo = ({onChange}: { onChange: (field: keyof FormDataType, value: stri
 const StepThree = ( {formData}: { formData: FormDataType} ) => {
     return (
         <>
-            <h2>Step Three</h2>
-            <div>Summary:</div>
-            <div>{`Name: ${formData.name}`}</div>
-            <div>{`Surname: ${formData.surname}`}</div>
-            <div>{`Date of Birth: ${formData.dateBirth}`}</div>
-            <div>{`Hobby: ${formData.hobby}`}</div>
+            <h2 className="dark: text-slate-300">Step Three</h2>
+            <Text>Summary:</Text>
+            <Text>{`Name: ${formData.name}`}</Text>
+            <Text>{`Surname: ${formData.surname}`}</Text>
+            <Text>{`Date of Birth: ${formData.dateBirth}`}</Text>
+            <Text>{`Hobby: ${formData.hobby}`}</Text>
         </>
     )
 }
@@ -98,7 +98,7 @@ export const FormWizard = () => {
     return (
         <>
             <div className="">
-                <h1>Form Wizard</h1>
+                <h1 className="dark: text-slate-300">Form Wizard</h1>
                 {renderStep()}
                 <Button label="Previous" onClick={handlePrevClick}/>
                 <Button label="Next" onClick={handleNextClick}/>
