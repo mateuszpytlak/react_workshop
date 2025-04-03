@@ -5,23 +5,26 @@ import { Text } from "../ui"
 import { useParams } from "react-router-dom";
 import { ProductsDetails } from "../features/Products/ProductDetails";
 import { fetchProduct } from "../services/products";
+import { useApi } from "../hooks/useApi";
 
 export const ProductsDetailsPage = () => {
     const { id } = useParams();    
-    const [data, setData] = useState<ProductDto | null>(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState(false);
+    // const [data, setData] = useState<ProductDto | null>(null);
+    // const [isLoading, setIsLoading] = useState(true);
+    // const [isError, setIsError] = useState(false);
 
-    useEffect(() => {
-        if (id) {
-            fetchProduct(id).then(responseData => {
-                setData(responseData)
-                setIsLoading(false);
-            }).catch( () => {
-                setIsError(true);
-            })
-        }
-    }, [id]);   
+    const {data, isLoading, isError} = useApi<ProductDto>(() => fetchProduct(id));
+
+    // useEffect(() => {
+    //     if (id) {
+    //         fetchProduct(id).then(responseData => {
+    //             setData(responseData)
+    //             setIsLoading(false);
+    //         }).catch( () => {
+    //             setIsError(true);
+    //         })
+    //     }
+    // }, [id]);   
 
     return (
         <>
