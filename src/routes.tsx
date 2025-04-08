@@ -9,6 +9,7 @@ import { ProductsPage } from "./pages/ProductsPage";
 import { BasketListPage } from "./pages/BasketListPage";
 import { BrandSwitcherPage } from "./pages/BrandSwitcher";
 import { ProductsDetailsPage } from "./pages/ProductsDetailsPage";
+import { CreateProductPage } from "./pages/CreateProductPage";
 
 export const routes = {
     HOME: {
@@ -37,6 +38,10 @@ export const routes = {
     },
     PRODUCTS_DETAILS: {
         path: '/products/:id',
+        //title: 
+    },
+    CREATE_PRODUCT: {
+        path: '/products/create',
         //title: 
     },
     BRAND_SWITCHER: {
@@ -79,6 +84,10 @@ export const router = createBrowserRouter([{
     {
         path: routes.PRODUCTS_DETAILS.path,
         element: <ProductsDetailsPage />
+    },
+    {
+        path: routes.CREATE_PRODUCT.path,
+        element: <CreateProductPage />
     },
     {
         path: routes.BRAND_SWITCHER.path,

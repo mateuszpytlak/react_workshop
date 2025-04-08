@@ -1,5 +1,4 @@
 //discriminated union
-
 import { useEffect, useState } from "react";
 
 type S<T> = {
