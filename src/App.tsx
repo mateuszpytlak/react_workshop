@@ -15,7 +15,7 @@ import { Provider as ReduxAppProvider } from 'react-redux';
 // import {RegistrationFormRefsHookFormWithValidation} from "./components/RegistrationForm";
 
 import { store } from './store';
-import { FormWizard } from './components/FormWizard/FormWizard.tsx';
+// import { FormWizard } from './components/FormWizard/FormWizard.tsx';
 import { UsersList } from './components/UsersList/UsersList.tsx';
 import { users } from './utils/mockData.ts';
 import { BrandProvider } from './components/BrandContext/BrandContext.tsx';
