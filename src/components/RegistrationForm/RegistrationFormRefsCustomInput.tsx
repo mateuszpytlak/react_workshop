@@ -1,6 +1,6 @@
-import {Button} from "../../ui/Button/Button.tsx";
-import {FormEventHandler, useEffect, useRef} from "react";
+import {Button} from "../../ui";
 import {Input} from "../../ui";
+import {FormEventHandler, useEffect, useRef} from "react";
 
 type RegistrationFormData = {
     email: string;

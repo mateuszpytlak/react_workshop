@@ -4,7 +4,8 @@ import {AuthContextProvider} from "./AuthContext.tsx";
 
 describe('AuthCredentials component', () => {
     it('should toggle values', () => {
-        const { debug } = render(
+        // const { debug } = render(
+        render(
             <AuthContextProvider>
                 <AuthCredentials/>
             </AuthContextProvider>

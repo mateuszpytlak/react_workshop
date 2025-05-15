@@ -24,14 +24,14 @@ export const RegistrationFormRefsHookFormWithValidation = () => {
     const [email, password] = watchedFields;
 
     const handleRegistrationForm: SubmitHandler<RegistrationFormData> = (data) => {
-        console.log(data); //send to API
+        console.log(data); //send it to API
     }
 
     return (
         <form onSubmit={handleSubmit(handleRegistrationForm)}>
-            <p>E-mail: {email}, password: {password}</p>
-            <Input label="E-mail" {...register('email')} error={errors.email} type="email" />
-            <Input label="Password" {...register('password')} error={errors.password}  type="password" />
+            <p className="dark:text-slate-300" >E-mail: {email}, password: {password}</p>
+            <Input label="E-mail" {...register('email')} error={errors.email}  />
+            <Input label="Password" {...register('password')} error={errors.password}  />
             <Input label="Language" {...register('language')} error={errors.language}/>
             <Button label="Send" type="submit"></Button>
         </form>
