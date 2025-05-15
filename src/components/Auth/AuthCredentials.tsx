@@ -12,7 +12,7 @@ export const AuthCredentials = () => {
     return (
         <div>
             <Text>Is user logged? {isLoggedIn ? 'Yes' : 'No'}</Text>
-            <Text>Is user logged? {isLoggedIn && 'Yes'}</Text>
+            {/*<Text>Is user logged? {isLoggedIn && 'Yes'}</Text>*/}
             <Button label={ 'Toggle login state' } onClick={handleClick} />
             <Button label={ 'Log In!' } onClick={logIn} />
             <Button label={ 'Log Out! '} onClick={logOut} />
