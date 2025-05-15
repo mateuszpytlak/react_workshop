@@ -5,7 +5,7 @@ import { AuthContextProvider } from './components/Auth/AuthContext.tsx';
 // import {ComponentGenerator} from "./components/ComponentGenerator";
 // import { FormWizard } from './components/FormWizard/FormWizard';
 // import {ViewPort} from "./components/ViewPort";
-import { AuthInfo } from './components/Auth/AuthInfo.tsx';
+// import { AuthInfo } from './components/Auth/AuthInfo.tsx';
 import { ThemeContextProvider } from './components/Theme/ThemeContext.tsx';
 import { router } from './routes.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -43,15 +43,15 @@ function App() {
                             <ThemeSwitcher />
                             <AuthContextProvider>
                                 <RouterProvider router={router} />
-                                <br />
-                                <hr />
-                                <br />
-                                <ErrorBoundary>
-                                    <AuthInfo />
-                                </ErrorBoundary>
-                                <br />
-                                <hr />
-                                <br />
+                                {/*<br />*/}
+                                {/*<hr />*/}
+                                {/*<br />*/}
+                                {/*<ErrorBoundary>*/}
+                                {/*    <AuthInfo />*/}
+                                {/*</ErrorBoundary>*/}
+                                {/*<br />*/}
+                                {/*<hr />*/}
+                                {/*<br />*/}
                                 <UsersList data={users} />
                             </AuthContextProvider>
                         </ThemeContextProvider>
