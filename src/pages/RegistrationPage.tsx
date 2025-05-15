@@ -1,5 +1,6 @@
-import { RegistrationFormRefsCustomInput } from "../components/RegistrationForm"
+import {RegistrationFormRefsHookFormWithValidation} from "../components/RegistrationForm"
 
 export const RegistrationPage = () => {
-    return <RegistrationFormRefsCustomInput />
+    // return <RegistrationFormRefsCustomInput />
+    return <RegistrationFormRefsHookFormWithValidation />
 }
