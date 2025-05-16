@@ -20,6 +20,7 @@ import { UsersList } from './components/UsersList/UsersList.tsx';
 import { users } from './utils/mockData.ts';
 import { BrandProvider } from './components/BrandContext/BrandContext.tsx';
 import { Logo } from './ui/index.ts';
+import {ViewPort} from "./components/ViewPort";
 
 function App() {
     return (
@@ -33,7 +34,6 @@ function App() {
             {/*<hr/>*/}
 
             {/*<ComponentGenerator />*/}
-            {/*<ViewPort />*/}
 
             <ErrorBoundary fallback={<p className="dark:text-slate-300">General error</p>}>
                 <ReduxAppProvider store={store}>
@@ -53,6 +53,7 @@ function App() {
                                 {/*<hr />*/}
                                 {/*<br />*/}
                                 <UsersList data={users} />
+                                <ViewPort />
                             </AuthContextProvider>
                         </ThemeContextProvider>
                     </BrandProvider>
