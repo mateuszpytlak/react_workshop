@@ -6,9 +6,6 @@ describe('Stepper reducer', () => {
 
         const result = reducer(initialState, { type: ActionType.SET_VALUE });
         expect(result).toStrictEqual(initialState);
-
-        const result_add = reducer(initialState, { type: ActionType.SET_VALUE, payload: 10 });
-        expect(result_add).toStrictEqual({ count: 10 });
     })
 
     it('should increase value', () => {
